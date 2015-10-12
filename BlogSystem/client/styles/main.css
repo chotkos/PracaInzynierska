@@ -1,0 +1,104 @@
+body {
+    font-family: font-family: 'Fira Sans'!important;
+    font-weight: bold!important;
+}
+
+.jumbotron {
+    background-image: url("https://unsplash.com/photos/QE2QOZqxdr4/download");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+body.white {
+    background-color: white;
+    color: #000000;
+}
+
+body.black {
+    background-color: #000000;
+    color: white;
+}
+
+.gradient-top-black {
+    width: 100%;
+    height: 50px;
+    display: block;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,7db9e8+100&amp;1+0,0+100 */
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(125, 185, 232, 0) 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 1)), color-stop(100%, rgba(125, 185, 232, 0)));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(125, 185, 232, 0) 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(125, 185, 232, 0) 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(125, 185, 232, 0) 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(125, 185, 232, 0) 100%);
+    /* W3C */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#007db9e8', GradientType=0);
+    /* IE6-9 */
+}
+
+.gradient-bottom-black {
+    width: 100%;
+    height: 50px;
+    display: table-cell;
+    vertical-align: bottom;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&amp;0+0,1+100 */
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 1)));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+    /* W3C */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000', GradientType=0);
+    /* IE6-9 */
+}
+
+.btn-transparent-white {
+    background: transparent;
+    border-color: white!important;
+    color: white!important;
+}
+
+.btn-transparent-white:hover {
+    background: transparent;
+    border-color: white!important;
+    color: white!important;
+}
+
+.btn-full-white {
+    background: white!important;
+    color: black!important;
+    border-color: white!important;
+}
+
+.btn-full-white:hover {
+    background: white!important;
+    color: black!important;
+    border-color: white!important;
+}
+
+#login-buttons {
+    margin-top: 8px;
+}
+
+.login-link-text {
+    color: #9D9D9C!important;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.login-link-text:hover {
+    color: white!important;
+    font-size: 18px;
+    line-height: 20px;
+}
