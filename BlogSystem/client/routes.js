@@ -13,7 +13,12 @@ angular.module('blogSystem').config(['$urlRouterProvider', '$stateProvider', '$l
                 url: '/parties/:partyId',
                 templateUrl: 'client/parties/details/party-details.ng.html',
                 controller: 'PartyDetailsCtrl'
+            })
+            .state('posts', {
+                url: '/posts',
+                templateUrl: 'client/posts/list.ng.html',
+                controller: 'postsCtrl'
             });
 
-        $urlRouterProvider.otherwise("/parties");
+        $urlRouterProvider.otherwise("/posts");
     }]);
