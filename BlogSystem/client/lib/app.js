@@ -1,0 +1,1 @@
+angular.module('blogSystem', ['angular-meteor', 'ui.router']);
