@@ -1,13 +1,14 @@
 body {
-    font-family: font-family: 'Fira Sans'!important;
+    font-family: 'Fira Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif!important;
     font-weight: bold!important;
-}
-
-.jumbotron {
-    background-image: url("https://unsplash.com/photos/QE2QOZqxdr4/download");
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.9) 100%), -webkit-linear-gradient(left, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.9) 100%), url("https://unsplash.com/photos/QE2QOZqxdr4/download");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+.jumbotron {
+    background-color: transparent;
 }
 
 body.white {
