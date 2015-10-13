@@ -4,17 +4,22 @@ html {
 }
 
 body {
-    height: 100% font-family: 'Fira Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Fira Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: bold;
     background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.9) 100%), -webkit-linear-gradient(left, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.9) 100%), url("https://unsplash.com/photos/QE2QOZqxdr4/download");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
     background-position: center;
+    max-height: 800px;
 }
 
 h1,
 h4 {
     text-shadow: black 0.1em 0.1em 0.2em
+}
+
+.light-text {
+    font-weight: 100;
 }
 
 .jumbotron {
@@ -126,4 +131,42 @@ body.black {
 .footer-white {
     background-color: white;
     color: black;
+}
+
+#login-buttons.login-buttons-dropdown-align-right,
+#login-dropdown-list {
+    left: auto;
+    right: -1px;
+}
+
+#login-buttons .login-close-text {
+    float: right;
+}
+
+.accounts-dialog {
+    height: 100% font-family: 'Fira Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: black;
+    color: white;
+}
+
+input {
+    background-color: black!important;
+}
+
+.text-black {
+    color: black!important;
+}
+
+.panel {
+    padding-left: 0px;
+    padding-right: 0px;
+    box-shadow: black 0.1em 0.1em 0.2em;
+    border-width: 0;
+}
+
+.post-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 200px;
 }
