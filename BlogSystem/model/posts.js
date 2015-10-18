@@ -8,6 +8,6 @@ Posts.allow({
         return userId && post.owner === userId;
     },
     remove: function (userId, post) {
-        return userId && post.owner === userId;
+        return true;
     }
 });

@@ -175,3 +175,8 @@ input {
 .jumbotron {
     margin-bottom: 0!important;
 }
+
+.list-group-item-buttons {
+    float: right;
+    top: 0;
+}

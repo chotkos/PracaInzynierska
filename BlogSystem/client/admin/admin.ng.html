@@ -4,7 +4,19 @@
             <h2>Posts:</h2>
         </div>
         <div class="panel-footer text-black" ng-show="showPosts">
-            <div id="postsGrid" ui-grid="{ data: posts }" class="grid"></div>
+            <div class="list-group">
+                <a class="list-group-item" ng-repeat="post in posts">
+                    <h2 ng-click="navigate(post.id)">{{post.title}}</h2>
+                    <i><h2>{{post.date  | date:'yyyy-MM-dd HH:mm:ss'}}</h2></i>
+                    <span class="light-text ">{{post.description}}</span>
+                    <br/>
+                    <div class="btn-group" role="group">
+                        <button type="button" ng-click="navigate(post.id)" class="btn btn-primary">Show</button>
+                        <button type="button" class="btn btn-warning" ng-click="navigateEdit(post._id)">Edit</button>
+                        <button type="button" class="btn btn-danger" ng-click="removePost($index)">Remove</button>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
     <div id="pages" class="panel">
