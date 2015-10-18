@@ -18,7 +18,31 @@ angular.module('blogSystem').config(['$urlRouterProvider', '$stateProvider', '$l
                 url: '/posts',
                 templateUrl: 'client/posts/list.ng.html',
                 controller: 'postsCtrl'
+            })
+            .state('admin', {
+                url: '/admin',
+                templateUrl: 'client/admin/admin.ng.html',
+                controller: 'adminCtrl',
+                resolve: {
+                    "currentUser": function ($meteor) {
+                        return $meteor.requireValidUser(function (user) {
+                            return user.username === 'admin';
+                        });
+                    }
+                }
             });
+
+
 
         $urlRouterProvider.otherwise("/posts");
     }]);
+
+angular.module("blogSystem").run(function ($rootScope, $state) {
+    $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
+        // We can catch the error thrown when the $requireUser promise is rejected
+        // and redirect the user back to the main page
+        if (error === 'AUTH_REQUIRED') {
+            $state.go('posts');
+        }
+    });
+});

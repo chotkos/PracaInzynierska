@@ -10,7 +10,8 @@ body {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
-    max-height: 800px;
+    max-height: 900px;
+    min-height: 900px;
 }
 
 h1,
@@ -169,4 +170,8 @@ input {
     background-repeat: no-repeat;
     width: 100%;
     height: 200px;
+}
+
+.jumbotron {
+    margin-bottom: 0!important;
 }

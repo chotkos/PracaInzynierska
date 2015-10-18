@@ -1,0 +1,35 @@
+<div class="col-md-12">
+    <div id="posts" class="panel">
+        <div class="panel-heading  text-black" ng-click="showPosts = !showPosts;">
+            <h2>Posts:</h2>
+        </div>
+        <div class="panel-footer text-black" ng-show="showPosts">
+            <div id="postsGrid" ui-grid="{ data: posts }" class="grid"></div>
+        </div>
+    </div>
+    <div id="pages" class="panel">
+        <div class="panel-heading  text-black" ng-click="showPages = !showPages;">
+            <h2>Pages:</h2>
+        </div>
+        <div class="panel-footer text-black" ng-show="showPages">
+            lorem ipsu
+        </div>
+    </div>
+    <div id="comments" class="panel">
+        <div class="panel-heading  text-black" ng-click="showComments = !showComments;">
+            <h2>Comments:</h2>
+        </div>
+        <div class="panel-footer text-black" ng-show="showComments">
+            lorem ipsu
+        </div>
+    </div>
+    <div id="users" class="panel">
+        <div class="panel-heading  text-black" ng-click="showUsers = !showUsers;">
+            <h2>Users:</h2>
+        </div>
+        <div class="panel-footer text-black" ng-show="showUsers">
+            lorem ipsu
+        </div>
+    </div>
+
+</div>
