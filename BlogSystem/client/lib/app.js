@@ -1,4 +1,4 @@
-angular.module('blogSystem', ['angular-meteor', 'ui.router']);
+angular.module('blogSystem', ['angular-meteor', 'ui.router', 'ngSanitize']);
 Template.body.helpers({
     configuration: function () {
         var x = Configurations.find({

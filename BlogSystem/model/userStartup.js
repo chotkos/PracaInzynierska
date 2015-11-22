@@ -1,7 +1,7 @@
 if (Meteor.isServer) {
     Meteor.startup(function () {
 
-        if (Meteor.users.find({}).fetch().length == 1) {
+        if (Meteor.users.find({}).fetch().length == 0) {
             var options = {
                 username: "admin",
                 email: "admin@admin.com",
@@ -13,7 +13,6 @@ if (Meteor.isServer) {
             }
 
             Accounts.createUser(options);
-
         }
     });
 }

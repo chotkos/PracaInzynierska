@@ -19,6 +19,10 @@ h4 {
     text-shadow: black 0.1em 0.1em 0.2em
 }
 
+h2 {
+    font-size: 25px!important;
+}
+
 .light-text {
     font-weight: 100;
 }
@@ -35,6 +39,10 @@ body.white {
 body.black {
     background-color: #000000;
     color: white;
+}
+
+.panel-body {
+    color: black!important;
 }
 
 .gradient-top-black {
@@ -151,7 +159,7 @@ body.black {
 }
 
 input {
-    background-color: black!important;
+    background-color: transparent!important;
 }
 
 .text-black {
@@ -179,4 +187,12 @@ input {
 .list-group-item-buttons {
     float: right;
     top: 0;
+}
+
+.text-black {
+    color: black!important;
+}
+
+.text-white {
+    color: white!important;
 }

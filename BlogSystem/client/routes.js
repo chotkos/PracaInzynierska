@@ -19,6 +19,16 @@ angular.module('blogSystem').config(['$urlRouterProvider', '$stateProvider', '$l
                 templateUrl: 'client/posts/list.ng.html',
                 controller: 'postsCtrl'
             })
+            .state('post', {
+                url: '/posts/:postId',
+                templateUrl: 'client/post/post.ng.html',
+                controller: 'postCtrl'
+            })
+            .state('postcreate', {
+                url: '/postscreate',
+                templateUrl: 'client/postCreate/postcreate.ng.html',
+                controller: 'postcreateCtrl'
+            })
             .state('admin', {
                 url: '/admin',
                 templateUrl: 'client/admin/admin.ng.html',
