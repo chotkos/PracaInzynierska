@@ -5,16 +5,13 @@ angular.module('blogSystem').controller('adminCtrl', ['$scope', '$meteor', '$sta
             date: -1
         }
     });
-    /*sort({
-        date: -1
-    });*/
 
-    $scope.navigate = function (postId) {
+    $scope.navigate = function (post) {
         $state.go('post', {
-            postId: postId
+            postId: post._id
         });
     };
-    $scope.navigateEdit = function (postId) {
+    $scope.navigateEdit = function (post) {
         //todo: use the $routeProvider
     };
     $scope.removePost = function (index) {

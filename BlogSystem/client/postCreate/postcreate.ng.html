@@ -23,12 +23,13 @@
             </div>
             <div class="panel-body">
                 <div id="summernote">Tell them something ;)</div>
-
             </div>
             <div class="panel-footer">
                 <span class="text-black">
-                Zapisz i spadaj
-            </span>
+                    <div class="btn-group" role="group">
+                        <button type="submit" ng-disabled="postForm.$invalid" class="btn btn-success">Save</button>
+                    </div>
+                </span>
             </div>
         </div>
     </form>
