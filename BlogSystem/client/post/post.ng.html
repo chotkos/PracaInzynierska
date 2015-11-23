@@ -2,13 +2,16 @@
     <div class=" panel">
         <div class="panel-body post-image" style="background-image:url('{{post.image}}')">
         </div>
-        <div class="panel-footer">
+        <div class="panel-body">
             <span class="text-black">
                 <h2>{{post.title}}</h2>
                 <i><h3>{{post.date  | date:'yyyy-MM-dd HH:mm:ss'}}</h3></i>
                 <hr/><br/>
                 <div ng-bind-html="post.content"></div>
             </span>
+        </div>
+        <div class="panel-footer">
+            <post-buttons></post-buttons>
         </div>
     </div>
 </div>

@@ -6,20 +6,4 @@ angular.module('blogSystem').controller('adminCtrl', ['$scope', '$meteor', '$sta
         }
     });
 
-    $scope.navigate = function (post) {
-        $state.go('post', {
-            postId: post._id
-        });
-    };
-    $scope.navigateEdit = function (post) {
-        $state.go('postedit', {
-            postId: post._id
-        });
-    };
-    $scope.removePost = function (index) {
-        $meteor.collection(Posts).remove($scope.posts[index]);
-        $scope.posts = $meteor.collection(Posts).sort({
-            date: -1
-        });
-    };
 }]);

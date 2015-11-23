@@ -196,3 +196,7 @@ input {
 .text-white {
     color: white!important;
 }
+
+.text-wrap {
+    overflow-wrap: break-word!important;
+}
