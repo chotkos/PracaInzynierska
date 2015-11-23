@@ -116,12 +116,14 @@ body.black {
     background: transparent;
     border-color: white!important;
     color: white!important;
+    text-shadow: black 0.1em 0.1em 0.2em
 }
 
 .btn-transparent-white:hover {
     background: transparent;
     border-color: white!important;
     color: white!important;
+    text-shadow: black 0.1em 0.1em 0.2em
 }
 
 .btn-full-white {
