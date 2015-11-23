@@ -12,10 +12,11 @@ angular.module('blogSystem').controller('adminCtrl', ['$scope', '$meteor', '$sta
         });
     };
     $scope.navigateEdit = function (post) {
-        //todo: use the $routeProvider
+        $state.go('postedit', {
+            postId: post._id
+        });
     };
     $scope.removePost = function (index) {
-
         $meteor.collection(Posts).remove($scope.posts[index]);
         $scope.posts = $meteor.collection(Posts).sort({
             date: -1

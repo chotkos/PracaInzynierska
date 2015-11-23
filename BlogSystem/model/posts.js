@@ -5,7 +5,7 @@ Posts.allow({
         return true;
     },
     update: function (userId, post, fields, modifier) {
-        return userId && post.owner === userId;
+        return true;
     },
     remove: function (userId, post) {
         return true;

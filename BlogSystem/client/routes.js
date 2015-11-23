@@ -24,10 +24,29 @@ angular.module('blogSystem').config(['$urlRouterProvider', '$stateProvider', '$l
                 templateUrl: 'client/post/post.ng.html',
                 controller: 'postCtrl'
             })
+            .state('postedit', {
+                url: '/postedit/:postId',
+                templateUrl: 'client/postEdit/postEdit.ng.html',
+                controller: 'posteditCtrl',
+                resolve: {
+                    "currentUser": function ($meteor) {
+                        return $meteor.requireValidUser(function (user) {
+                            return user.username === 'admin';
+                        });
+                    }
+                }
+            })
             .state('postcreate', {
                 url: '/postscreate',
                 templateUrl: 'client/postCreate/postcreate.ng.html',
-                controller: 'postcreateCtrl'
+                controller: 'postcreateCtrl',
+                resolve: {
+                    "currentUser": function ($meteor) {
+                        return $meteor.requireValidUser(function (user) {
+                            return user.username === 'admin';
+                        });
+                    }
+                }
             })
             .state('admin', {
                 url: '/admin',
