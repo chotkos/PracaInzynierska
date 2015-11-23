@@ -6,4 +6,8 @@ angular.module('blogSystem').controller('adminCtrl', ['$scope', '$meteor', '$sta
         }
     });
 
+    $scope.create = function () {
+        $state.go('postcreate');
+    }
+
 }]);

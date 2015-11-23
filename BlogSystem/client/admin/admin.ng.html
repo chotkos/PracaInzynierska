@@ -10,14 +10,13 @@
                     <i><h3>{{post.date  | date:'yyyy-MM-dd HH:mm:ss'}}</h3></i>
                     <span class="light-text ">{{post.description}}</span>
                     <br/>
-                    <!--<div class="btn-group" role="group">
-                        <button type="button" ng-click="navigate(post)" class="btn btn-primary">Show</button>
-                        <button type="button" class="btn btn-warning" ng-click="navigateEdit(post)">Edit</button>
-                        <button type="button" class="btn btn-danger" ng-click="removePost($index)">Remove</button>
-                    </div>-->
                     <post-buttons></post-buttons>
                 </a>
             </div>
+            <div class="btn-group pull-right" role="group">
+                <button type="button" ng-click="create()" class="btn btn-success ">Create</button>
+            </div>
+            <div class="clearfix"></div>
         </div>
     </div>
     <div id="pages" class="panel">

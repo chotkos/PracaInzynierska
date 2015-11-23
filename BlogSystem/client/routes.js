@@ -37,7 +37,7 @@ angular.module('blogSystem').config(['$urlRouterProvider', '$stateProvider', '$l
                 }
             })
             .state('postcreate', {
-                url: '/postscreate',
+                url: '/postcreate',
                 templateUrl: 'client/postCreate/postcreate.ng.html',
                 controller: 'postcreateCtrl',
                 resolve: {
