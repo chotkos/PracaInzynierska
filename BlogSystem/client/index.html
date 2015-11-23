@@ -4,7 +4,7 @@
     <base href="/">
 </head>
 
-<body class="black">
+<body>
     <div ng-app="blogSystem" ng-controller="mainCtrl">
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
@@ -28,15 +28,18 @@
                 <!--/.navbar-collapse -->
             </div>
         </nav>
+        <div class="bcg-img" style="margin-top:50px;">
+            <img src="https://images.unsplash.com/photo-1414604582943-2fd913b3cb17?ixlib=rb-0.3.5&q=80&fm=jpg&s=c4bc9e799cb86e3762c10ba085a9d842" class="bcg-img" style="position: static;" />
+            <div class="bcg-img-ending"></div>
+        </div>
         <div class="jumbotron">
-            <div class="gradient-top-black"></div>
             <div class="container">
                 <br/>
                 <br/>
                 <br/>
-                <h1 style="font-size:50px;">{{configuration[0].name}}</h1>
+                <h1 class="text-white" style="font-size:50px;">{{configuration[0].name}}</h1>
                 <br/>
-                <h4 class="pull-left">{{configuration[0].description}}</h4>
+                <h4 class="text-white pull-left">{{configuration[0].description}}</h4>
                 <br/>
                 <hr>
                 <p>
