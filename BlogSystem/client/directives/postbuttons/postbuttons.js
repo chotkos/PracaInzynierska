@@ -5,8 +5,9 @@ angular.module('blogSystem').directive('postButtons', function ($state, $rootSco
         templateUrl: 'client/directives/postbuttons/postbuttons.ng.html',
         link: function (scope, element, attr) {
 
-            scope.isAdmin = $rootScope.currentUser.profile.isAdmin;
-
+            if ($rootScope.currentUser && $rootScope.currentUser.profile) {
+                scope.isAdmin = $rootScope.currentUser.profile.isAdmin;
+            }
             scope.dontShow = $state.current.name;
 
             scope.navigate = function (post) {

@@ -2,12 +2,12 @@ Comments = new Mongo.Collection("comments");
 
 Comments.allow({
     insert: function (userId, comment) {
-        return userId && comment.owner === userId;
+        return true;
     },
     update: function (userId, comment, fields, modifier) {
-        return userId && comment.owner === userId;
+        return true;
     },
     remove: function (userId, comment) {
-        return userId && comment.owner === userId;
+        return true;
     }
 });

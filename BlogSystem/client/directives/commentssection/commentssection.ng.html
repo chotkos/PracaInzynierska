@@ -1,0 +1,33 @@
+<div class="col-md-12">
+    <form name="postForm" ng-submit="submitComment()" novalidate>
+        <div class="panel" ng-if="isLoggedIn">
+            <div class="panel-body">
+                <h2 class="text-black">Add new comment:</h2>
+                <hr/>
+                <div class="form-group" ng-class="{ 'has-error' : postForm.desc.$invalid && !postForm.desc.$pristine }">
+                    <textarea class="form-control" id="desc" rows="5" name="desc" ng-model="newComment" required ng-maxlength="1000"></textarea>
+                    <p ng-show="postForm.desc.$error.maxlength" class="help-block">Comment is too long.</p>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <span class="text-black">
+                    <div class="btn-group" role="group">
+                        <button type="submit" ng-disabled="postForm.$invalid" class="btn btn-success">Add</button>
+                    </div>
+                </span>
+            </div>
+        </div>
+        <div class="panel" ng-if="!isLoggedIn">
+            <div class="panel-body">
+                <h2><a ng-click="openLogin()">Log in or sign up to comment articles.</a></h2>
+                <div class="pull-right">
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panel-body" ng-repeat="comment in comments">
+
+            </div>
+        </div>
+    </form>
+</div>

@@ -32,6 +32,7 @@ angular.module('blogSystem').config(['$urlRouterProvider', '$stateProvider', '$l
                     "currentUser": function ($meteor) {
                         return $meteor.requireValidUser(function (user) {
                             return user.username === 'admin';
+                            //return user.profile.isAdmin;
                         });
                     }
                 }
@@ -44,6 +45,7 @@ angular.module('blogSystem').config(['$urlRouterProvider', '$stateProvider', '$l
                     "currentUser": function ($meteor) {
                         return $meteor.requireValidUser(function (user) {
                             return user.username === 'admin';
+                            //return user.profile.isAdmin;
                         });
                     }
                 }
@@ -56,6 +58,7 @@ angular.module('blogSystem').config(['$urlRouterProvider', '$stateProvider', '$l
                     "currentUser": function ($meteor) {
                         return $meteor.requireValidUser(function (user) {
                             return user.username === 'admin';
+                            //return user.profile.isAdmin;
                         });
                     }
                 }
