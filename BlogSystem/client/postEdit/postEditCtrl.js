@@ -14,6 +14,7 @@ angular.module('blogSystem').controller('posteditCtrl', ['$scope', '$meteor', '$
             $scope.post.content = $('#summernote').code();
             //$scope.post.author = $rootScope.currentUser.profile.name;
             //$scope.post.date = new Date();
+            $scope.post.save();
             $scope.posts.save();
             $state.go('admin');
         };
