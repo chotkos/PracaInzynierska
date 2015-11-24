@@ -1,4 +1,4 @@
-angular.module('blogSystem').controller('postcreateCtrl', ['$scope', '$meteor', '$state', '$rootScope',
+angular.module('blogSystem').controller('postNewCtrl', ['$scope', '$meteor', '$state', '$rootScope',
         function ($scope, $meteor, $state, $rootScope) {
 
         $scope.post = {};

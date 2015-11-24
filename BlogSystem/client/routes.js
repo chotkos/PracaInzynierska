@@ -4,30 +4,20 @@ angular.module('blogSystem').config(['$urlRouterProvider', '$stateProvider', '$l
         $locationProvider.html5Mode(true);
 
         $stateProvider
-            .state('parties', {
-                url: '/parties',
-                templateUrl: 'client/parties/list/parties-list.ng.html',
-                controller: 'PartiesListCtrl'
-            })
-            .state('partyDetails', {
-                url: '/parties/:partyId',
-                templateUrl: 'client/parties/details/party-details.ng.html',
-                controller: 'PartyDetailsCtrl'
-            })
             .state('posts', {
                 url: '/posts',
-                templateUrl: 'client/posts/list.ng.html',
-                controller: 'postsCtrl'
+                templateUrl: 'client/postViews/list/postList.ng.html',
+                controller: 'postListCtrl'
             })
             .state('post', {
                 url: '/posts/:postId',
-                templateUrl: 'client/post/post.ng.html',
-                controller: 'postCtrl'
+                templateUrl: 'client/postViews/view/postView.ng.html',
+                controller: 'postViewCtrl'
             })
             .state('postedit', {
                 url: '/postedit/:postId',
-                templateUrl: 'client/postEdit/postEdit.ng.html',
-                controller: 'posteditCtrl',
+                templateUrl: 'client/postViews/edit/postEdit.ng.html',
+                controller: 'postEditCtrl',
                 resolve: {
                     "currentUser": function ($meteor) {
                         return $meteor.requireValidUser(function (user) {
@@ -37,10 +27,10 @@ angular.module('blogSystem').config(['$urlRouterProvider', '$stateProvider', '$l
                     }
                 }
             })
-            .state('postcreate', {
-                url: '/postcreate',
-                templateUrl: 'client/postCreate/postcreate.ng.html',
-                controller: 'postcreateCtrl',
+            .state('postnew', {
+                url: '/postnew',
+                templateUrl: 'client/postViews/new/postNew.ng.html',
+                controller: 'postNewCtrl',
                 resolve: {
                     "currentUser": function ($meteor) {
                         return $meteor.requireValidUser(function (user) {
@@ -63,8 +53,6 @@ angular.module('blogSystem').config(['$urlRouterProvider', '$stateProvider', '$l
                     }
                 }
             });
-
-
 
         $urlRouterProvider.otherwise("/posts");
     }]);

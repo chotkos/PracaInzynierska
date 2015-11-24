@@ -1,4 +1,4 @@
-angular.module('blogSystem').controller('posteditCtrl', ['$scope', '$meteor', '$state', '$rootScope', '$stateParams', '$timeout',
+angular.module('blogSystem').controller('postEditCtrl', ['$scope', '$meteor', '$state', '$rootScope', '$stateParams', '$timeout',
         function ($scope, $meteor, $state, $rootScope, $stateParams, $timeout) {
 
         $('#summernote').summernote();

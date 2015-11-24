@@ -1,4 +1,4 @@
-angular.module("blogSystem").controller("postCtrl", ['$scope', '$stateParams', '$meteor', '$sce', '$timeout',
+angular.module("blogSystem").controller("postViewCtrl", ['$scope', '$stateParams', '$meteor', '$sce', '$timeout',
     function ($scope, $stateParams, $meteor, $sce, $timeout) {
         //$scope.postId = $stateParams.postId;
 
