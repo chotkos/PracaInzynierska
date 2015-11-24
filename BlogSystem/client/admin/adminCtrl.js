@@ -2,7 +2,7 @@ angular.module('blogSystem').controller('adminCtrl', ['$scope', '$meteor', '$sta
     $scope.showPosts = true;
     $scope.posts = $meteor.collection(Posts).subscribe("posts", {
         sort: {
-            date: -1
+            date: 1
         }
     });
 

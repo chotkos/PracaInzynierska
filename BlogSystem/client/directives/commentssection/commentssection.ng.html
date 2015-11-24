@@ -1,18 +1,18 @@
 <div class="col-md-12">
-    <form name="postForm" ng-submit="submitComment()" novalidate>
+    <form name="commentForm" ng-submit="submitComment()" novalidate>
         <div class="panel" ng-if="isLoggedIn">
             <div class="panel-body">
                 <h2 class="text-black">Add new comment:</h2>
                 <hr/>
-                <div class="form-group" ng-class="{ 'has-error' : postForm.desc.$invalid && !postForm.desc.$pristine }">
-                    <textarea class="form-control" id="desc" rows="5" name="desc" ng-model="newComment" required ng-maxlength="1000"></textarea>
-                    <p ng-show="postForm.desc.$error.maxlength" class="help-block">Comment is too long.</p>
+                <div class="form-group" ng-class="{ 'has-error' : commentForm.newComment.$invalid && !commentForm.newComment.$pristine }">
+                    <textarea class="form-control" id="newComment" rows="5" name="newComment" ng-model="newComment" required ng-maxlength="1000"></textarea>
+                    <p ng-show="commentForm.newComment.$error.maxlength" class="help-block">Comment is too long.</p>
                 </div>
             </div>
             <div class="panel-footer">
                 <span class="text-black">
                     <div class="btn-group" role="group">
-                        <button type="submit" ng-disabled="postForm.$invalid" class="btn btn-success">Add</button>
+                        <button type="submit" ng-disabled="commentForm.$invalid" class="btn btn-success">Add</button>
                     </div>
                 </span>
             </div>
@@ -26,7 +26,16 @@
         </div>
         <div class="panel">
             <div class="panel-body" ng-repeat="comment in comments">
-
+                <h2>{{comment.user}}</h2>
+                <i><h3>{{comment.date  | date:'yyyy-MM-dd HH:mm:ss'}} - Points:{{comment.points}}</h3> </i>
+                <p>{{comment.content}}</p>
+                <br ng-if="isAdmin" />
+                <div class="btn-group" role="group">
+                    <button ng-if="isLoggedIn && comment.upVoters.indexOf($root.currentUser._id) ===-1" type="button" ng-click="upvote(comment)" class="btn btn-success">Upvote</button>
+                    <button ng-if="isLoggedIn && comment.downVoters.indexOf($root.currentUser._id) ===-1" type="button" ng-click="downvote(comment)" class="btn btn-warning">Downvote</button>
+                    <button ng-if="isAdmin" type="button" ng-click="removeComment(comment)" class="btn btn-danger">Remove</button>
+                </div>
+                <hr/>
             </div>
         </div>
     </form>
