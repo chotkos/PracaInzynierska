@@ -1,16 +1,12 @@
 angular.module('blogSystem').service('postService', function ($meteor) {
 
     this.postsSubscription = $meteor.collection(Posts).subscribe("posts", {});
-    this.posts = function (options) {
-        if (options === undefined || options === null) {
-            options = {
-                sort: {
-                    date: -1
-                }
-            };
-        }
-        return $meteor.collection(Posts).subscribe("posts", options);
-    }
+
+    this.posts = function (options, sorters) {
+        return $meteor.collection(function () {
+            return Posts.find(options, sorters);
+        });
+    };
 
     this.newPost = function (post) {
         postsSubscription.push(post);

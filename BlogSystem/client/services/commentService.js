@@ -1,6 +1,7 @@
 angular.module('blogSystem').service('commentService', function ($meteor) {
 
     this.commentsSubscription = $meteor.collection(Comments).subscribe("comments", {});
+
     this.comments = function (options, sorters) {
         return $meteor.collection(function () {
             return Comments.find(options, sorters);

@@ -16,16 +16,7 @@ angular.module('blogSystem').directive('commentsSection', function ($state, $roo
                 'postId': $stateParams.postId
             };
 
-            scope.comments = commentService.comments({}, sorters);
-            /*
-                        scope.comments = $meteor.collection(function () {
-                            return Comments.find({}, {
-                                sort: {
-                                    date: 1
-                                }
-                            });
-                        });
-            */
+            scope.comments = commentService.comments(criterias, sorters);
 
             $timeout(function () {
                 if (scope.$root.currentUser && scope.$root.currentUser.profile) {
