@@ -1,10 +1,11 @@
-angular.module('blogSystem').controller('postEditCtrl', ['$scope', '$meteor', '$state', '$rootScope', '$stateParams', '$timeout',
-        function ($scope, $meteor, $state, $rootScope, $stateParams, $timeout) {
+angular.module('blogSystem').controller('postEditCtrl', ['$scope', '$meteor', '$state', '$rootScope', '$stateParams', '$timeout', 'postService',
+        function ($scope, $meteor, $state, $rootScope, $stateParams, $timeout, postService) {
 
         $('#summernote').summernote();
 
         $timeout(function () { //tricky part :)
-            $scope.post = $meteor.object(Posts, $stateParams.postId);
+            $scope.post = postService.getById($stateParams.postId);
+            //$scope.post = $meteor.object(Posts, $stateParams.postId);
             $(".note-editable").html($scope.post.content);
         });
 
@@ -12,10 +13,7 @@ angular.module('blogSystem').controller('postEditCtrl', ['$scope', '$meteor', '$
 
         $scope.submitPost = function () {
             $scope.post.content = $('#summernote').code();
-            //$scope.post.author = $rootScope.currentUser.profile.name;
-            //$scope.post.date = new Date();
-            $scope.post.save();
-            $scope.posts.save();
+            postService.updatePost($scope.post);
             $state.go('admin');
         };
 }]);

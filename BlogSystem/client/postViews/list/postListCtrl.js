@@ -1,4 +1,4 @@
-angular.module('blogSystem').controller('postListCtrl', ['$scope', '$meteor', '$state', function ($scope, $meteor, $state) {
+angular.module('blogSystem').controller('postListCtrl', ['$scope', '$meteor', '$state', function ($scope, $meteor, $state, $postService) {
     $scope.posts = $meteor.collection(Posts).subscribe("posts", {
         sort: {
             date: -1
