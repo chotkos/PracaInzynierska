@@ -1,16 +1,31 @@
-angular.module('blogSystem').directive('commentsSection', function ($state, $rootScope, $meteor, $stateParams, $log, $timeout) {
+angular.module('blogSystem').directive('commentsSection', function ($state, $rootScope, $meteor, $stateParams, $log, $timeout, commentService) {
     return {
         restrict: 'AE',
         replace: 'true',
         templateUrl: 'client/directives/commentssection/commentssection.ng.html',
         link: function (scope, element, attr) {
-            scope.commentsSubcription = $meteor.collection(Comments).subscribe("comments");
+            scope.commentsSubcription = commentService.commentsSubscription;
 
-            scope.comments = $meteor.collection(function () {
-                return Comments.find({
-                    postId: $stateParams.postId
-                });
-            });
+            var sorters = {
+                'sort': {
+                    'date': 1
+                }
+            };
+
+            var criterias = {
+                'postId': $stateParams.postId
+            };
+
+            scope.comments = commentService.comments({}, sorters);
+            /*
+                        scope.comments = $meteor.collection(function () {
+                            return Comments.find({}, {
+                                sort: {
+                                    date: 1
+                                }
+                            });
+                        });
+            */
 
             $timeout(function () {
                 if (scope.$root.currentUser && scope.$root.currentUser.profile) {
@@ -18,8 +33,6 @@ angular.module('blogSystem').directive('commentsSection', function ($state, $roo
                 }
                 scope.isLoggedIn = null != scope.$root.currentUser;
             }, 1000);
-
-
 
             scope.openLogin = function () {
                 $('#login-sign-in-link').click()
@@ -61,11 +74,10 @@ angular.module('blogSystem').directive('commentsSection', function ($state, $roo
 
                 scope.commentsSubcription.push(model);
 
-                scope.comments = $meteor.collection(function () {
-                    return Comments.find({
-                        postId: $stateParams.postId
-                    });
-                });
+                /*scope.comments = commentService.comments({
+                    date: -1
+
+                  });*/
             };
         }
     };

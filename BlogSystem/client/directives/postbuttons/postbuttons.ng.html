@@ -1,4 +1,4 @@
-<div class="btn-group" role="group">
+<div class="btn-group" role="group" style="margin-top:15px;">
     <button ng-if="dontShow=='postedit'" type="submit" ng-disabled="postForm.$invalid" class="btn btn-success">Save</button>
     <button ng-if="dontShow!='post'" type="button" ng-click="navigate(post)" class="btn btn-primary">Show</button>
     <button ng-if="isAdmin && dontShow!='postedit'" type="button" class="btn btn-warning" ng-click="navigateEdit(post)">Edit</button>

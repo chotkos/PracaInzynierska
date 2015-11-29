@@ -32,7 +32,16 @@
             <h2>Comments:</h2>
         </div>
         <div class="panel-footer text-black" ng-show="showComments">
-            lorem ipsu
+            <div class="list-group">
+                <a class="list-group-item" ng-repeat="comment in comments">
+                    <h2>{{comment.user}}</h2>
+                    <i><h3>{{comment.date  | date:'yyyy-MM-dd HH:mm:ss'}}</h3></i>
+                    <span class="light-text ">{{comment.content}}</span>
+                    <br/>
+                    <comment-buttons></comment-buttons>
+                </a>
+            </div>
+            <div class="clearfix"></div>
         </div>
     </div>
     <div id="users" class="panel">

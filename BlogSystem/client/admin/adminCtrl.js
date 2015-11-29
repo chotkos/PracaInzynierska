@@ -1,13 +1,20 @@
-angular.module('blogSystem').controller('adminCtrl', ['$scope', '$meteor', '$state', function ($scope, $meteor, $state) {
-    $scope.showPosts = true;
-    $scope.posts = $meteor.collection(Posts).subscribe("posts", {
-        sort: {
-            date: -1
-        }
-    });
+angular.module('blogSystem').controller('adminCtrl', ['$scope', '$meteor', '$state', 'postService', 'commentService',
+                                             function ($scope, $meteor, $state, postService, commentService) {
+        $scope.showPosts = true;
+        $scope.posts = postService.posts({
+            sort: {
+                date: -1
+            }
+        });
 
-    $scope.create = function () {
-        $state.go('postnew');
-    }
+        $scope.comments = commentService.comments({}, {
+            sort: {
+                date: -1
+            }
+        });
+
+        $scope.create = function () {
+            $state.go('postnew');
+        }
 
 }]);
