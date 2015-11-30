@@ -14,26 +14,29 @@
                 </a>
             </div>
             <div class="btn-group pull-right" role="group">
-                <button type="button" ng-click="create()" class="btn btn-success ">Create</button>
+                <button ng-if="postPage>1" class="btn btn-primary " ng-click="lastPagePosts() " type="button ">Last page</button>
+                <button class="btn btn-primary " type="button ">{{postPage}}</button>
+                <button ng-if="posts.length===pagesize && postLength>postPage*pagesize" class="btn btn-primary " ng-click="nextPagePosts() " type="button ">Next page</button>
+                <button type="button " ng-click="create() " class="btn btn-success ">Create</button>
             </div>
-            <div class="clearfix"></div>
+            <div class="clearfix "></div>
         </div>
     </div>
-    <div id="pages" class="panel">
-        <div class="panel-heading  text-black" ng-click="showPages = !showPages;">
+    <div id="pages " class="panel ">
+        <div class="panel-heading text-black " ng-click="showPages=! showPages; ">
             <h2>Pages:</h2>
         </div>
-        <div class="panel-footer text-black" ng-show="showPages">
+        <div class="panel-footer text-black " ng-show="showPages ">
             lorem ipsu
         </div>
     </div>
-    <div id="comments" class="panel">
-        <div class="panel-heading  text-black" ng-click="showComments = !showComments;">
+    <div id="comments " class="panel ">
+        <div class="panel-heading text-black " ng-click="showComments=! showComments; ">
             <h2>Comments:</h2>
         </div>
-        <div class="panel-footer text-black" ng-show="showComments">
-            <div class="list-group">
-                <a class="list-group-item" ng-repeat="comment in comments">
+        <div class="panel-footer text-black " ng-show="showComments ">
+            <div class="list-group ">
+                <a class="list-group-item " ng-repeat="comment in comments ">
                     <h2>{{comment.user}}</h2>
                     <i><h3>{{comment.date  | date:'yyyy-MM-dd HH:mm:ss'}}</h3></i>
                     <span class="light-text ">{{comment.content}}</span>
@@ -41,14 +44,19 @@
                     <comment-buttons></comment-buttons>
                 </a>
             </div>
-            <div class="clearfix"></div>
+            <div class="btn-group pull-right" role="group">
+                <button ng-if="commentsPage>1" class="btn btn-primary " ng-click="lastPageComments() " type="button ">Last page</button>
+                <button class="btn btn-primary " type="button ">{{commentsPage}} </button>
+                <button ng-if="comments.length===pagesize && commentsLength>commentsPage*pagesize" class="btn btn-primary " ng-click="nextPageComments() " type="button ">Next page</button>
+            </div>
+            <div class="clearfix "></div>
         </div>
     </div>
-    <div id="users" class="panel">
-        <div class="panel-heading  text-black" ng-click="showUsers = !showUsers;">
+    <div id="users " class="panel ">
+        <div class="panel-heading text-black " ng-click="showUsers=! showUsers; ">
             <h2>Users:</h2>
         </div>
-        <div class="panel-footer text-black" ng-show="showUsers">
+        <div class="panel-footer text-black " ng-show="showUsers ">
             lorem ipsu
         </div>
     </div>

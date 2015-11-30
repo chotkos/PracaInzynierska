@@ -1,4 +1,4 @@
-angular.module('blogSystem').controller('postListCtrl', ['$scope', '$meteor', '$state', 'postService', function ($scope, $meteor, $state, postService) {
+angular.module('blogSystem').controller('postListCtrl', ['$scope', '$meteor', '$state', 'postService', '$timeout', function ($scope, $meteor, $state, postService, $timeout) {
 
     $scope.page = 1;
     var sorters = {
@@ -18,11 +18,16 @@ angular.module('blogSystem').controller('postListCtrl', ['$scope', '$meteor', '$
             postId: _id
         });
     };
+    $scope.postLength = 1;
+    $timeout(function () {
+        $scope.postLength = postService.postsSubscription.length;
+    }, 500);
 
     $scope.nextPage = function () {
         $scope.page++;
         sorters.skip = 9 * ($scope.page - 1);
         $scope.posts = postService.posts(criterias, sorters);
+        $scope.postLength = postService.postsSubscription.length;
 
     };
 
@@ -30,6 +35,8 @@ angular.module('blogSystem').controller('postListCtrl', ['$scope', '$meteor', '$
         $scope.page--;
         sorters.skip = 9 * ($scope.page - 1);
         $scope.posts = postService.posts(criterias, sorters);
+        $scope.postLength = postService.postsSubscription.length;
+
     };
 
   }]);

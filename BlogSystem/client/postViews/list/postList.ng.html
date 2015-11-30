@@ -18,7 +18,7 @@
         <hr/>
         <p class="text-white">
             Page: {{page}}
-            <a ng-show="posts.length===9" class="btn btn-transparent-white pull-right " ng-click="nextPage() " role="button ">Next page</a>
+            <a ng-show="posts.length===9 && postLength>page*9" class="btn btn-transparent-white pull-right " ng-click="nextPage() " role="button ">Next page</a>
             <a ng-show="page>1" class="btn btn-transparent-white pull-right " ng-click="lastPage() " role="button ">Last page</a>
         </p>
     </div>
