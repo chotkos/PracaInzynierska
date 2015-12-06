@@ -1,0 +1,26 @@
+<form name="configurationForm" ng-submit="submitConfig()" novalidate>
+    <p style="display:none!important;">{{configuration}}</p>
+    <div class="form-group" ng-class="{ 'has-error' : configurationForm.title.$invalid && !configurationForm.title.$pristine }">
+        <label for="title">Blog header:</label>
+        <input type="text" class="form-control" id="title" name="title" ng-model="configuration.name" required>
+        <p ng-show="configurationForm.title.$invalid && !configurationForm.title.$pristine" class="help-block">Title is required.</p>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error' : configurationForm.image.$invalid && !configurationForm.image.$pristine }">
+        <label for="image">Image URL:</label>
+        <input type="text" class="form-control" id="image" name="image" ng-model="configuration.backgroundImage" required ng-pattern="/^.*\.(jpg|JPG|png|PNG)$/">
+        <p ng-show="configurationForm.image.$invalid && !configurationForm.image.$pristine" class="help-block">URL to an image in type of .jpg or .png is required.</p>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error' : configurationForm.author.$invalid && !configurationForm.author.$pristine }">
+        <label for="title">Author:</label>
+        <input type="text" class="form-control" id="author" name="author" ng-model="configuration.author" required>
+        <p ng-show="configurationForm.author.$invalid && !configurationForm.author.$pristine" class="help-block">Author is required.</p>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error' : configurationForm.description.$invalid && !configurationForm.description.$pristine }">
+        <label for="title">Description:</label>
+        <input type="text" class="form-control" id="description" name="description" ng-model="configuration.description" required>
+        <p ng-show="configurationForm.description.$invalid && !configurationForm.description.$pristine" class="help-block">Description is required.</p>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="submit" ng-disabled="pageForm.$invalid" class="btn btn-success">Save</button>
+    </div>
+</form>

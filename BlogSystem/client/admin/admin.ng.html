@@ -74,5 +74,12 @@
             lorem ipsu
         </div>
     </div>
-
+    <div id="config" class="panel ">
+        <div class="panel-heading text-black " ng-click="showConfigs=! showConfigs; ">
+            <h2>Configuration:</h2>
+        </div>
+        <div class="panel-footer text-black " ng-show="showConfigs ">
+            <configuration-editor></configuration-editor>
+        </div>
+    </div>
 </div>
