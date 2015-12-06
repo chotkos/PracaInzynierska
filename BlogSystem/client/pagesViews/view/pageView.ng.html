@@ -1,0 +1,15 @@
+<div class="col-md-12">
+    <div class=" panel">
+        <div class="panel-body">
+            <span class="text-black">
+                <h2>{{page.title}}</h2>
+                <i><h3>Last update: {{page.date  | date:'yyyy-MM-dd HH:mm:ss'}}</h3></i>
+                <hr/><br/>
+                <div ng-bind-html="content()"></div>
+            </span>
+        </div>
+        <div class="panel-footer">
+            <!--<post-buttons></post-buttons>-->
+        </div>
+    </div>
+</div>

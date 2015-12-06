@@ -1,0 +1,27 @@
+<div class="col-md-12">
+    <form name="pageForm" ng-submit="submitPage()" novalidate>
+
+        <div class="panel">
+            <div class="panel-body">
+                <h2 class="text-black">Add new page</h2>
+                <hr/>
+                <div class="form-group" ng-class="{ 'has-error' : pageForm.title.$invalid && !pageForm.title.$pristine }">
+                    <label for="title">Title:</label>
+                    <input type="text" class="form-control" id="title" name="title" ng-model="page.title" required> {{form}}
+                    <p ng-show="pageForm.title.$invalid && !pageForm.title.$pristine" class="help-block">Title is required.</p>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div id="summernote">Show me what you've got ;)</div>
+            </div>
+            <div class="panel-footer">
+
+                <span class="text-black">
+                    <div class="btn-group" role="group">
+                        <button type="submit" ng-disabled="pageForm.$invalid" class="btn btn-success">Save</button>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </form>
+</div>

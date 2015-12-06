@@ -14,6 +14,11 @@ angular.module('blogSystem').config(['$urlRouterProvider', '$stateProvider', '$l
                 templateUrl: 'client/postViews/view/postView.ng.html',
                 controller: 'postViewCtrl'
             })
+            .state('page', {
+                url: '/pages/:pageId',
+                templateUrl: 'client/pagesViews/view/pageView.ng.html',
+                controller: 'pageViewCtrl'
+            })
             .state('postedit', {
                 url: '/postedit/:postId',
                 templateUrl: 'client/postViews/edit/postEdit.ng.html',
@@ -27,10 +32,36 @@ angular.module('blogSystem').config(['$urlRouterProvider', '$stateProvider', '$l
                     }
                 }
             })
+            .state('pageedit', {
+                url: '/pageedit/:pageId',
+                templateUrl: 'client/pagesViews/edit/pageEdit.ng.html',
+                controller: 'pageEditCtrl',
+                resolve: {
+                    "currentUser": function ($meteor) {
+                        return $meteor.requireValidUser(function (user) {
+                            return user.username === 'admin';
+                            //return user.profile.isAdmin;
+                        });
+                    }
+                }
+            })
             .state('postnew', {
                 url: '/postnew',
                 templateUrl: 'client/postViews/new/postNew.ng.html',
                 controller: 'postNewCtrl',
+                resolve: {
+                    "currentUser": function ($meteor) {
+                        return $meteor.requireValidUser(function (user) {
+                            return user.username === 'admin';
+                            //return user.profile.isAdmin;
+                        });
+                    }
+                }
+            })
+            .state('pagenew', {
+                url: '/pagenew',
+                templateUrl: 'client/pagesViews/new/pageNew.ng.html',
+                controller: 'pageNewCtrl',
                 resolve: {
                     "currentUser": function ($meteor) {
                         return $meteor.requireValidUser(function (user) {

@@ -2,12 +2,12 @@ Pages = new Mongo.Collection("pages");
 
 Pages.allow({
     insert: function (userId, page) {
-        return userId && page.owner === userId;
+        return true;
     },
     update: function (userId, page, fields, modifier) {
-        return userId && page.owner === userId;
+        return true;
     },
     remove: function (userId, page) {
-        return userId && page.owner === userId;
+        return true;
     }
 });
