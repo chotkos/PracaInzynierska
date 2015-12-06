@@ -1,0 +1,6 @@
+<p>
+    <a class="btn btn-transparent-white" href="/posts" role="button">Home</a>
+    <a class="btn btn-transparent-white" href="/pages/{{page._id}}" role="button" ng-repeat="page in pages">{{page.title}}</a>
+    <a class="btn btn-transparent-white" ng-show="isAdmin" href="/pagenew" role="button">+</a>
+    <a class="btn btn-transparent-white pull-right" href="#" role="button">Search</a>
+</p>

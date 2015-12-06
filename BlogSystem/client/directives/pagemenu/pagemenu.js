@@ -8,11 +8,15 @@ angular.module('blogSystem').directive('pageMenu', function ($state, $rootScope,
             if ($rootScope.currentUser && $rootScope.currentUser.profile) {
                 scope.isAdmin = $rootScope.currentUser.profile.isAdmin;
             }
-            scope.navigate = function (page) {
-                $state.go('page', {
-                    pageId: page._id
-                });
+
+            var criterias = {};
+            var sortersPages = {
+                'sort': {
+                    'date': -1
+                }
             };
+            scope.pages = pageService.pages(criterias, sortersPages);
+
             scope.navigatenew = function () {
                 $state.go('pagenew', {
                     pageId: page._id
