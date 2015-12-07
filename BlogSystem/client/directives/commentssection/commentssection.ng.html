@@ -26,7 +26,7 @@
         </div>
         <div class="panel">
             <div class="panel-body" ng-repeat="comment in comments">
-                <h2>{{comment.user}}</h2>
+                <h2>{{comment.user | userfilter }}</h2>
                 <i><h3>{{comment.date  | date:'yyyy-MM-dd HH:mm:ss'}} - Points:{{comment.points}}</h3> </i>
                 <p>{{comment.content}}</p>
                 <br ng-if="isAdmin" />
