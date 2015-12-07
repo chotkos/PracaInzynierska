@@ -1,5 +1,5 @@
-angular.module('blogSystem').controller('adminCtrl', ['$scope', '$meteor', '$state', 'postService', 'commentService', '$timeout', 'pageService',
-function ($scope, $meteor, $state, postService, commentService, $timeout, pageService) {
+angular.module('blogSystem').controller('adminCtrl', ['$scope', '$meteor', '$state', 'postService', 'commentService', '$timeout', 'pageService', 'userService',
+function ($scope, $meteor, $state, postService, commentService, $timeout, pageService, userService) {
         $scope.showPosts = true;
         $scope.pagesize = 6;
         $scope.postLength = 1;
@@ -84,5 +84,6 @@ function ($scope, $meteor, $state, postService, commentService, $timeout, pageSe
             $state.go('pagenew');
         };
 
+        $scope.users = userService.usersSubscription;
 
 }]);

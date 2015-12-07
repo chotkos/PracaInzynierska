@@ -1,0 +1,5 @@
+<div class="btn-group" role="group" style="margin-top:15px;">
+    <button ng-hide="user.profile.isAdmin" ng-click="toggleAdmin(user)" class="btn btn-success">Set admin</button>
+    <button ng-show="user.profile.isAdmin && scope.currentUser._id != user._id" ng-click="toggleAdmin(user)" class="btn btn-warning">Unset admin</button>
+    <button ng-if="isAdmin" ng-click="removeAccount(user)" class="btn btn-danger">Remove</button>
+</div>

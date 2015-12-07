@@ -71,7 +71,15 @@
             <h2>Users:</h2>
         </div>
         <div class="panel-footer text-black " ng-show="showUsers ">
-            lorem ipsu
+            <div class="list-group ">
+                <a class="list-group-item " ng-repeat="user in users ">
+                    <h2>{{user.emails[0].address}}</h2>
+                    <!--<p>{{user.profile}}</p>-->
+                    <br/>
+                    <user-buttons></user-buttons>
+                    <!--tu bd userbuttons-->
+                </a>
+            </div>
         </div>
     </div>
     <div id="config" class="panel ">
