@@ -22,6 +22,15 @@ angular.module('blogSystem').directive('pageMenu', function ($state, $rootScope,
                     pageId: page._id
                 });
             };
+
+            scope.showSearchBarOrNavigate = function () {
+                if ($state.current.name != 'posts') {
+                    $rootScope.showSearch = true;
+                    $state.go('posts'); //maybe some magic with router?
+                } else {
+                    $rootScope.showSearch = !$rootScope.showSearch;
+                }
+            }
         }
     };
 });

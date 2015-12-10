@@ -3,5 +3,5 @@
     <a class="btn btn-transparent-white" href="/pages/{{page._id}}" role="button" ng-repeat="page in pages">{{page.title}}</a>
     <a class="btn btn-transparent-white" ng-show="isAdmin" href="/admin" role="button">Admin panel</a>
     <a class="btn btn-transparent-white" ng-show="isAdmin" href="/pagenew" role="button">+</a>
-    <a class="btn btn-transparent-white pull-right" href="#" role="button">Search</a>
+    <a class="btn btn-transparent-white pull-right" ng-click="showSearchBarOrNavigate()" role="button">{{$root.showSearch ? "Close Search":"Search"}}</a>
 </p>

@@ -83,7 +83,7 @@ angular.module('blogSystem').config(['$urlRouterProvider', '$stateProvider', '$l
                         });
                     }
                 }
-            });
+            })
 
         $urlRouterProvider.otherwise("/posts");
     }]);
