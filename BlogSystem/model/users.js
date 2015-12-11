@@ -13,10 +13,10 @@ Meteor.users.allow({
     insert: function (userId, post) {
         return true;
     },
-    update: function (userId, post, fields, modifier) {
-        return true;
+    update: function (userId, user, fields, modifier) {
+        return userId != undefined && userId != null && (userId === user._id || isAdmin(userId));
     },
     remove: function (userId, post) {
-        return true;
+        return isAdmin(userId);
     }
 });
