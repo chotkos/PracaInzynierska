@@ -1,4 +1,4 @@
-angular.module('blogSystem').directive('commentsSection', function ($state, $rootScope, $meteor, $stateParams, $log, $timeout, commentService) {
+angular.module('blogSystem').directive('commentsSection', function ($state, $rootScope, $meteor, $stateParams, $log, $timeout, commentService, $location, $anchorScroll, $filter) {
     return {
         restrict: 'AE',
         replace: 'true',
@@ -64,6 +64,11 @@ angular.module('blogSystem').directive('commentsSection', function ($state, $roo
                 }
 
                 scope.commentsSubcription.push(model);
+
+                $location.hash('comment' + $filter("date")(model.date, "yyyyMMddHHmmss"));
+
+                // call $anchorScroll()
+                $anchorScroll();
 
                 /*scope.comments = commentService.comments({
                     date: -1
