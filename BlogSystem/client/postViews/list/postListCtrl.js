@@ -4,7 +4,7 @@ angular.module('blogSystem').controller('postListCtrl', ['$scope', '$meteor', '$
         $scope.page = 1;
         var sorters = {
             'sort': {
-                'date': 1
+                'date': -1
             },
             'limit': 9,
             'skip': 0,
