@@ -4,8 +4,8 @@ if (Meteor.isServer) {
             var configurations = [
                 {
                     name: "Wydarzenia programistyczne",
-                    description: "Przykładowy blog",
-                    author: "Jan Kowalski",
+                    description: "Przykładowy blog stworzony w ramach pracy inżynierskiej",
+                    author: "Mateusz Chodkowski",
                     backgroundImage: "http://s19.postimg.org/5eo6afkep/bcg.jpg",
                     isSet: true,
                 }
