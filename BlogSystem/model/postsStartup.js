@@ -37,6 +37,24 @@ if (Meteor.isServer) {
                     date: new Date(),
                     description: "Turniej którego celem jest stworzenia aplikacji, które mogą ułatwić życie mieszkańcom miasta.",
                     tags: ["WARSZAWA", "GOOGLE", "CAMPUS", "PAWEŁ", "NIEWĘGŁOWSKI", "SGGW", "SILVER.NET", "WAWCODE"],
+                },
+                {
+                    title: "LUBCODE",
+                    content: '<div>LUBCODE – „Koduj dla Lublina” to bezpłatny 36-godzinny turniej dla programistów, którego celem jest stworzenia aplikacji mobilnych oraz serwisów internetowych, które mogą ułatwić życie mieszkańcom miasta oraz turystom przybywającym do Lublina. Uczestników wspierali będą mentorzy z lubelskich firm informatycznych. Wydarzenie potrwa 2 dni w godzinach od 8:00 w sobotę do 20:00 w niedzielę. Uczestnikom zapewniamy pełen catering oraz atrakcyjne nagrody dla najlepszych.</div><div><br></div><div>Hackathon dedykowany jest programistom języków: Java, C++, C#, PHP, Objectiv C, którzy chcą się rozwijać poznając nowe technologie i stworzyć ciekawe projekty służące miastu i jego mieszkańcom.</div><div><br></div><div>Wydarzenie odbędzie się w dniach 9-10 kwietnia 2016 roku w Inkubatorze Technologicznym przy ul. Frezerów 3 w Lublinie.</div><div><a href="http://www.lubcode.pl/" target="_blank">Źródło</a><br></div>',
+                    author: "admin",
+                    image: "http://s19.postimg.org/w8joi6a6q/image.jpg",
+                    date: new Date(),
+                    description: "36-godzinny turniej którego celem jest stworzenia aplikacji dla Lublina.",
+                    tags: ["36H", "LUBLIN", "PAWEŁ", "NIEWĘGŁOWSKIE", "DEVUP", "HACKATHON", "LUBCODE", "LUBCODE"],
+                },
+                {
+                    title: "Battlehack",
+                    content: '<p><br></p><p><span style="line-height: 14.5455px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/DHhnYk38ZDM" frameborder="0" allowfullscreen=""></iframe><br></span></p><p><span style="line-height: 14.5455px;"><br></span></p><p><span style="line-height: 14.5455px;"><br></span></p><p><span style="line-height: 14.5455px;">November 14-15</span></p><p><span style="line-height: 14.5455px;"><br></span></p><p><span style="line-height: 14.5455px;">PayPal Town Hall&nbsp;</span></p><p><span style="line-height: 14.5455px;">2161 N. First Street&nbsp;</span></p><p><span style="line-height: 14.5455px;">San Jose, CA 95131</span></p><p><span style="line-height: 14.5455px;"><br></span></p><p><span style="line-height: 14.5455px;">A true global competition where the City Champions face off, compete, conquer and claim $100,000 USD and the title of The Ultimate Hackers For Good.</span></p><p><span style="line-height: 14.5455px;"><br></span></p><p><span style="line-height: 14.5455px;"><br></span><a href="https://2015.battlehack.org/" target="_blank">Źródło</a></p>',
+                    author: "admin",
+                    image: "https://dkfopyztvel7v.cloudfront.net/assets/2015/bh-2015-logo-0b4de4277ff47da6e0f0c4cba6a92aae.png",
+                    date: new Date(),
+                    description: "HELP YOUR COMMUNITY WIN AN EPIC AXE TROPHY AND A CHANCE AT 100K USD",
+                    tags: ["BATTLEHACK", "HACKATHON", "INTERNATIONALLY", "INTERNATIONAL", "BERLIN", "LONDON", "BATTLEHACK", "BATTLEHACK"],
                 }
             ];
             for (var i = 0; i < posts.length; i++)
